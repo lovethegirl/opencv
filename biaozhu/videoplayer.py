@@ -92,4 +92,4 @@ def videoplayer(path):
 
 if __name__ == '__main__':
     print('start video')
-    videoplayer('../video/1.mp4')
+    videoplayer('../video/out.avi')
