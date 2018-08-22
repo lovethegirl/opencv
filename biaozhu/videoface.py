@@ -73,14 +73,14 @@ class face:
 
 if __name__ == '__main__':
     f = face()
-    # f.readface()
-    # f.savevideo('../video/out.avi')
-    f.playvideo('../video/out.avi', '../images/')
-    DIR = '../images'
-    length = len([name for name in os.listdir(DIR)
-                  if os.path.isfile(os.path.join(DIR, name))])
-    print(length)
-    for i in range(1, length + 1):
-        print(i)
-        f.writeface('../images/' + str(i) + '.jpg',
-                    '../newpic/' + str(i) + '.jpg')
+    f.readface()
+    # # f.savevideo('../video/out.avi')
+    # f.playvideo('../video/out.avi', '../images/')
+    # DIR = '../images'
+    # length = len([name for name in os.listdir(DIR)
+    #               if os.path.isfile(os.path.join(DIR, name))])
+    # print(length)
+    # for i in range(1, length + 1):
+    #     print(i)
+    #     f.writeface('../images/' + str(i) + '.jpg',
+    #                 '../newpic/' + str(i) + '.jpg')

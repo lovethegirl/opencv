@@ -33,6 +33,7 @@ def draw_circle(event, x, y, flags, param):
 
 
 def mouse_circle():
+    global imgs
     cv.namedWindow('image')
     cv.setMouseCallback('image', draw_circle)
     global mode
