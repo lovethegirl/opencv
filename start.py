@@ -76,4 +76,20 @@ def trackbar():
 
 if __name__ == '__main__':
     # mouse_circle()
-    trackbar()
+    # trackbar()
+    img1 = cv.imread('images/mm.jpg')
+    print(img1.shape)
+    img2 = cv.imread('images/yangmi.jpg')
+    # img2.resize(640, 640, 3)
+    rows, cols, ch = img2.shape
+    roi = img1[0:rows, 0:cols]
+    img2grap = cv.cvtColor(img2, cv.COLOR_BGR2GRAY)
+    ret, mask = cv.threshold(img2grap, 10, 255, cv.THRESH_BINARY)
+    mask_inv = cv.bitwise_not(mask)
+    img1_bg = cv.bitwise_and(roi, roi, mask=mask)
+    img2_fg = cv.bitwise_and(img2, img2, mask=mask)
+    dst = cv.add(img1_bg, img2_fg)
+    img1[0:rows, 0:cols] = dst
+    cv.imshow('v', img1)
+    cv.waitKey(delay=0)
+    # cv.destroyAllWindow()
